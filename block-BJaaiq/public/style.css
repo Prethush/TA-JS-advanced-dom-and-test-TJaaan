@@ -31831,6 +31831,12 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
+blockquote {
+  font-size: 2.2rem;
+  font-style: italic;
+  padding: 1rem;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
