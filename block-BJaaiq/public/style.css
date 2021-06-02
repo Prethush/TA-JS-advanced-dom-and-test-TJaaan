@@ -31831,16 +31831,10 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
-.input-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.add {
-  position: absolute;
-  right: 15px;
-  color: black;
-  top: 8px;
+blockquote {
+  font-size: 2.2rem;
+  font-style: italic;
+  padding: 1rem;
 }
 
 @media (min-width: 640px) {
