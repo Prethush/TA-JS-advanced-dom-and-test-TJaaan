@@ -1,14 +1,16 @@
 {
-  "name": "altcampus-assignment",
+  "name": "block-bjaaiy",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests"
+    "start": "parcel index.html"
   },
-  "author": "AltCampus",
-  "license": "GNU GPL V3",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "jest": "^26.0.1"
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "parcel": "^2.0.0-beta.2"
   }
 }

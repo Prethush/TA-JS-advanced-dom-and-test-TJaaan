@@ -1,0 +1,5 @@
+const moment = require("moment");
+ console.log(moment);
+ console.log(moment().format('dddd'));
+ console.log(moment().format());
+ console.log(moment().format("MMMM Do YY"));

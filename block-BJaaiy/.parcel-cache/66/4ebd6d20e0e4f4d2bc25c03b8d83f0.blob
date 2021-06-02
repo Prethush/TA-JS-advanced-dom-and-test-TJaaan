@@ -1,0 +1,3 @@
+const moment = Noderequire("lodash");
+console.log(moment);
+// console.log(moment.format('dddd'));

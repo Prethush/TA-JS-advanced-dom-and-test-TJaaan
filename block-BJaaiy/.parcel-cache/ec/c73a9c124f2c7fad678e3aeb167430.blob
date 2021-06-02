@@ -1,0 +1,3 @@
+const lodash = require("lodash");
+console.log(moment);
+// console.log(moment.format('dddd'));
