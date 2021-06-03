@@ -1,0 +1,26 @@
+const moment = require("moment");
+ console.log(moment);
+ 
+ console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
+ console.log(moment().format('dddd'));
+ console.log(moment().format("MMMM Do YY"));
+
+ let date1 = moment(`2020-01-01`);
+ let date2 = moment(`2020-14-01`);
+ console.log(date1.isValid());
+ console.log(date2.isValid());
+ console.log(moment().add(7, 'd'));
+ console.log(moment().add(7, 'M'));
+ console.log(moment().add(7, 'y'));
+ console.log(moment().subtract(7, 'd'));
+ console.log(moment().subtract(7, 'M'));
+ console.log(moment().subtract(7, 'y'));
+
+ let a = moment([2014,11,11]);
+ let b = moment([2015,09,11]);
+ console.log(b.diff(a, "days"));
+
+let c = moment([2014,11,27]);
+let d = moment([2015,09,16]);
+console.log(d.diff(c, "days"));
+
