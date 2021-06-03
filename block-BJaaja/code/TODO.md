@@ -4,6 +4,133 @@
 - Install and setup the `eslint`
 - Go through [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
 - List 10 bad practices from the link above
+
+// 1)Use the litereal syntax for object creation
+// // bad
+// const item = new Object();
+
+// good
+const item = {};
+
+// 2) Use the literal syntax for array creation.
+// // bad
+// const items = new Array();
+
+// good
+const items = [];
+
+// 3) Use Array#push instead of direct assignment to add items to an array.
+
+const someStack = [];
+
+// bad
+// someStack[someStack.length] = 'abracadabra';
+
+// good
+someStack.push('abracadabra');
+
+// 4) Use array spreads ... to copy arrays.
+
+// // bad
+// const len = items.length;
+// const itemsCopy = [];
+// let i;
+
+// for (i = 0; i < len; i += 1) {
+// itemsCopy[i] = items[i];
+// }
+
+// good
+const itemsCopy = [...items];
+
+// 5) To convert an iterable object to an array, use spreads ... instead of Array.from.
+
+// const foo = document.querySelectorAll('.foo');
+
+// good
+// const nodes = Array.from(foo);
+
+// best
+const nodes = [...foo];
+
+// 6) Use Array.from for converting an array-like object to an array.
+
+// const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 };
+
+// // bad
+// const arr = Array.prototype.slice.call(arrLike);
+
+// good
+const arr = Array.from(arrLike);
+
+// 7) Use single quotes '' for strings
+
+// // bad
+// const name = "Capt. Janeway";
+
+// // bad - template literals should contain interpolation or newlines
+// const name = `Capt. Janeway`;
+
+// good
+const name = 'Capt. Janeway';
+
+// 8) Use named function expressions instead of function declarations.
+
+// // bad
+// function foo() {
+// // ...
+// }
+
+// good
+
+const short = function longUniqueMoreDescriptiveLexicalFoo() {
+// ...
+};
+
+// 9) Always use class. Avoid manipulating prototype directly
+
+// // bad
+// function Queue(contents = []) {
+// this.queue = [...contents];
+// }
+// Queue.prototype.pop = function () {
+// const value = this.queue[0];
+// this.queue.splice(0, 1);
+// return value;
+// };
+
+// good
+class Queue {
+constructor(contents = []) {
+this.queue = [...contents];
+}
+pop() {
+const value = this.queue[0];
+this.queue.splice(0, 1);
+return value;
+}
+}
+
+// 10) Use computed property names when creating objects with dynamic property names
+
+// function getKey(k) {
+// return `a key named ${k}`;
+// }
+
+// // bad
+// const obj = {
+// id: 5,
+// name: 'San Francisco',
+// };
+// obj[getKey('enabled')] = true;
+
+// good
+const obj = {
+id: 5,
+name: 'San Francisco',
+[getKey('enabled')]: true,
+};
+
 - Check if you get error (red underline) in VSCode.
 - Comment the bad code and fix it below that
 
@@ -50,9 +177,7 @@ var animalMethods = {
     return this.location;
   },
   summary: function () {
-    console.log(
-      `I live in ${this.location} and I have ${this.numberOfLegs}`
-    );
+    console.log(`I live in ${this.location} and I have ${this.numberOfLegs}`);
   },
 };
 
@@ -90,12 +215,7 @@ var dogsMethods = {
 
 Object.setPrototypeOf(dogsMethods, animalMethods);
 
-function createCat(
-  location,
-  numberOfLegs,
-  name,
-  colorOfEyes
-) {
+function createCat(location, numberOfLegs, name, colorOfEyes) {
   let obj = createAnimal(location, numberOfLegs);
   Object.setPrototypeOf(obj, catsMethods);
   obj.name = name;
