@@ -15,6 +15,8 @@ function checkFive(num) {
   function getWinner(guess1, guess2) {
     if(guess1 === guess2) {
       return 'TIE'
+    }else{
+      
     }
   }
   module.exports = checkFive;
